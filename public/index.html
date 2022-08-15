@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclosure</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+    <!-- Alpine JS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body class="h-screen flex justify-center items-start bg-gradient-to-r from-purple-500 to-purple-700">
+    <div class="flex flex-col gap-y-2 w-2/6 mt-[15rem] p-2 rounded-xl bg-white">
+      <!-- First Section -->
+      <div x-data="{ isOpen: false }">
+        <!-- Tab Title first -->
+        <div
+          @click="isOpen = !isOpen"
+          class="flex justify-between items-center px-4 py-2 rounded-lg text-purple-900 bg-purple-200 cursor-pointer"
+        >
+          <span class="select-none">What is your refund policy?</span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 stroke-purple-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          </span>
+        </div>
+        <!-- Tab Section first -->
+        <div x-show="isOpen" class="px-6 py-2 text-gray-500">
+          If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no
+          questions asked.
+        </div>
+      </div>
+      <!-- Second Section -->
+      <div x-data="{ isOpen: false }">
+        <!-- Tab Title second -->
+        <div
+          @click="isOpen = !isOpen"
+          class="flex justify-between items-center px-4 py-2 rounded-lg text-purple-900 bg-purple-200 cursor-pointer"
+        >
+          <span class="select-none">Do you offer technical support?</span>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 stroke-purple-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          </span>
+        </div>
+        <!-- Tab Section second -->
+        <div x-show="isOpen" class="px-6 py-2 text-gray-500">No.</div>
+      </div>
+    </div>
+  </body>
+</html>
